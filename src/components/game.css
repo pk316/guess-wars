@@ -1,0 +1,10 @@
+.container{
+    width: 80vw;
+}
+.numInput{
+    font-size: 2em;
+    text-align: center;
+}
+.btnDiv{
+    padding: 5%;
+}
