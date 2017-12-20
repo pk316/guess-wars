@@ -17,7 +17,7 @@ class Game extends Component {
         return Math.floor(Math.random() * 11)
     }
     reset = () => {
-        this.setState(this.state.num)
+        this.setState(this.state)
     }
     inputChange(event) {
         event.preventDefault();
@@ -33,15 +33,15 @@ class Game extends Component {
         }
         if (guess > num) {
             this.setState({
-                response: 'Too high'
+                response: guess + ' is too high'
             })
         } else if (guess < num) {
             this.setState({
-                response: 'Too Low'
+                response: guess + ' is too Low'
             })
         } else {
             this.setState({
-                response: 'You guessed it!'
+                response: guess+ ' is the correct number!'
             })
         }
     }
