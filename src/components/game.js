@@ -7,11 +7,13 @@ class Game extends Component {
 
         this.state = {
             num: this.generateRandomNum(),
-            guess: ''
+            guess: '',
+            guessLog : []
         };
         this.checkGuess = this.checkGuess.bind(this);
         this.reset = this.reset.bind(this);
         this.inputChange = this.inputChange.bind(this);
+        this.previousGuesses = this.previousGuesses.bind(this);
     }
     generateRandomNum = () => {
         return Math.floor(Math.random() * 11)
@@ -34,16 +36,31 @@ class Game extends Component {
         if (guess > num) {
             this.setState({
                 response: guess + ' is too high'
+            }, () => {
+                this.previousGuesses()
             })
         } else if (guess < num) {
             this.setState({
                 response: guess + ' is too Low'
+            }, () => {
+                this.previousGuesses()
             })
         } else {
             this.setState({
                 response: guess + ' is the correct number!'
+            }, () => {
+                this.previousGuesses()
             })
         }
+    }
+    previousGuesses = () => {
+        const { guess, response, guessLog }
+            const
+            this.setState({
+                history: [`${guess} | ${response}`, ...guessLog],
+                guess: ''
+            })
+
     }
 
     render(){
