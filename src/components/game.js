@@ -41,7 +41,7 @@ class Game extends Component {
             })
         } else {
             this.setState({
-                response: guess+ ' is the correct number!'
+                response: guess + ' is the correct number!'
             })
         }
     }
