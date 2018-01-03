@@ -8,7 +8,7 @@ class Game extends Component {
         this.state = {
             num: this.generateRandomNum(),
             guess: '',
-            guessLog : []
+            history : []
         };
         this.checkGuess = this.checkGuess.bind(this);
         this.reset = this.reset.bind(this);
@@ -54,10 +54,9 @@ class Game extends Component {
         }
     }
     previousGuesses = () => {
-        const { guess, response, guessLog }
-            const
+        const { guess, response, guessHistory } = this.state;
             this.setState({
-                history: [`${guess} | ${response}`, ...guessLog],
+                history: [`${guess} | ${response}`, ...guessHistory],
                 guess: ''
             })
 
