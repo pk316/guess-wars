@@ -57,7 +57,7 @@ class Game extends Component {
     previousGuesses = () => {
         const { guess, response, previousGuesses} = this.state;
             this.setState({
-                previousGuesses: [`${guess} | ${response}`, ...previousGuesses],
+                previousGuesses: [response, ...previousGuesses],
                 guess: ''
             })
 
@@ -79,8 +79,7 @@ class Game extends Component {
                         </div>
                     </div>
                 </form>
-                {/* <p>{response}</p> */}
-                <PreviousGuesses previousGuesses={previousGuesses} response={response}/>
+                <PreviousGuesses previousGuesses={previousGuesses}/>
             </div>
         )
     }
