@@ -1,4 +1,5 @@
 import React, { Component } from 'react' ;
+import PreviousGuesses from './previousGuess';
 import './game.css';
 
 class Game extends Component {
@@ -8,7 +9,7 @@ class Game extends Component {
         this.state = {
             num: this.generateRandomNum(),
             guess: '',
-            history : []
+            previousGuesses: []
         };
         this.checkGuess = this.checkGuess.bind(this);
         this.reset = this.reset.bind(this);
@@ -54,16 +55,16 @@ class Game extends Component {
         }
     }
     previousGuesses = () => {
-        const { guess, response, guessHistory } = this.state;
+        const { guess, response, previousGuesses} = this.state;
             this.setState({
-                history: [`${guess} | ${response}`, ...guessHistory],
+                previousGuesses: [`${guess} | ${response}`, ...previousGuesses],
                 guess: ''
             })
 
     }
 
     render(){
-        const {num, guess, response} = this.state;
+        const {num, guess, response, previousGuesses } = this.state;
         return (
             <div className="container">
                 <h1 className="text-center my-3">Guessing Game</h1>
@@ -78,7 +79,8 @@ class Game extends Component {
                         </div>
                     </div>
                 </form>
-                <p>{response}</p>
+                {/* <p>{response}</p> */}
+                <PreviousGuesses previousGuesses={previousGuesses} response={response}/>
             </div>
         )
     }
