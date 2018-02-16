@@ -1,7 +1,7 @@
 
-
 import React, { Component } from 'react' ;
 import PreviousGuesses from './previousGuess';
+// import './game.css';
 
 class Game extends Component {
     constructor(props) {
@@ -70,10 +70,11 @@ class Game extends Component {
             <div className="container">
                 <h1 className="game-title text-center my-3">Guess Wars</h1>
                 <form className="form-group">
+                    <input value={guess} onChange={this.inputChange} className="input-lg text-center" type="number" placeholder="1 - 10" min="0" max="10" autoFocus="autofocus" />
                     <div className="row justify-content-center">
-                        <input value={guess} onChange={this.inputChange} className="input-lg text-center" type="number" placeholder="1-10" min="0" max="10" autoFocus="autofocus" />
-                        <button onClick={this.checkGuess} className="btn btn-lg btn-outline-success m-2 text-center">GUESS</button>
-                        <button onClick={this.reset} className="btn btn-lg btn-outline-danger m-2 text-center">RESET</button>
+            
+                        <button onClick={this.checkGuess} className="btn btn-lg btn-outline-success m-3 text-center">GUESS</button>
+                        <button onClick={this.reset} className="btn btn-lg btn-outline-danger m-3 text-center">RESET</button>
                     </div>
                 </form>  
                 <div className="intro">
