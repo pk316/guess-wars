@@ -3,6 +3,13 @@ import React, { Component } from 'react' ;
 import PreviousGuesses from './previousGuess';
 // import './game.css';
 
+const display = {
+    display: 'flex'
+};
+const hide = {
+    display: 'none'
+};
+
 class Game extends Component {
     constructor(props) {
         super(props);
@@ -10,7 +17,8 @@ class Game extends Component {
         this.state = {
             num: this.generateRandomNum(),
             guess: '',
-            previousGuesses: []
+            previousGuesses: [],
+            toggle: false
         };
         this.checkGuess = this.checkGuess.bind(this);
         this.reset = this.reset.bind(this);
@@ -18,7 +26,7 @@ class Game extends Component {
         this.previousGuesses = this.previousGuesses.bind(this);
     }
     generateRandomNum = () => {
-        return Math.floor(Math.random() * 11)
+        return Math.floor(Math.random() * 1) + 1
     }
     reset = () => {
         this.setState(this.state)
@@ -52,6 +60,7 @@ class Game extends Component {
                 response: guess + ' is the correct number!'
             }, () => {
                 this.previousGuesses()
+                this.winner()
             })
         }
     }
@@ -62,6 +71,14 @@ class Game extends Component {
                 guess: ''
             })
 
+    }
+    toggle() {
+        this.setState(prevState => ({
+            toggle: !prevState.toggle
+        }));
+    }
+    winner = () => {
+        this.toggle();
     }
 
     render(){
@@ -89,15 +106,17 @@ class Game extends Component {
                         </div>
                     </div>
                 </div>
+                <div className="win-modal" style={this.state.toggle ? display : hide}>
+                    <div className="modal-content">
+                        <span className="close">&times;</span>
+                        <div>
+                            <p>You Guessed it!!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
 export default Game;
-
-
-
-
-
-

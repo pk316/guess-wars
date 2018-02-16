@@ -2,10 +2,10 @@
     font-family: 'starwars';
     src: url('./assets/fonts/death.otf')
 }
-
+/* 
 div {
     color: #BB9867;
-}
+} */
 
 body {
     background: url("./assets/images/space.jpg") no-repeat fixed;
@@ -29,16 +29,16 @@ input {
     border-radius: 10px;
 }
 
-li {
+/* li {
     border-radius: 4px;
-}
+} */
 
-.main-area {
+/* .main-area {
     background-color: rgba(0, 0, 0, .7);
     border-radius: 10px;
     padding: 20px;
     margin-top: 30px;
-}
+} */
 
 .btn {
     /* padding-top: 5%; */
@@ -72,7 +72,7 @@ li {
 form{
     text-align: center;
     position: relative;
-    top: 40vmin;
+    top: 50vmin;
 }
 .intro {
     position: absolute;
@@ -92,17 +92,17 @@ form{
     position: absolute;
     /* top: 100%;*/ 
     /* animation: scroll 100s linear 4s infinite; */
-    animation: scroll 100s linear 0s;
+    /* animation: scroll 60s linear 0s; */
 }
 @keyframes scroll {
     0% {
-        top: 120%;
+        top: 100%;
     }
-    20% {
+    13% {
         visibility: hidden;
     }
     100% {
-        top: -170%;
+        top: -150%;
         visibility: hidden;
     }
 }
@@ -116,7 +116,7 @@ form{
     text-align: center;
     padding: 3%;
     border: 2px solid black;
-    animation: slam 5s ease-in-out;
+    /* animation: slam 5s ease-in-out; */
 }
 @keyframes slam {
     0% {
@@ -138,22 +138,68 @@ form{
 
 .guess{
      position: absolute;
-     width: 80%;
-     height: 20em;
-     bottom: 0;
-     left: 70%;
-     margin-left: -10em;
+     width: 60vmax;
+     height: 60vmax;
+     bottom: -10%;
+     text-align: center;
+     left: 15vmax;
+     /* margin-left: -10em; */
      font-size: 100%;
      font-weight: bold;
-     text-align: justify;
+     /* text-align: justify; */
      overflow: hidden;
-     transform-origin: 50% 100%;
+     /* transform-origin: center; */
      transform: perspective(300px) rotateX(0deg);
 }
 .guess-content {
      position: absolute;
-     top: 100%;
-     float: right;
-     animation: scroll 60s linear 2s infinite;
+     /* top: 100%; */
+     /* float: right; */
+     animation: scroll-guess 8s ease-in infinite;
 }
-  
+  @keyframes scroll-guess {
+      0% {
+          top: 60vh
+      }
+      /* 50% {
+          visibility: hidden;
+      } */
+      100% {
+          top: 0vh;
+          /* visibility: hidden; */
+      }
+  }
+
+
+  .win-modal{
+      position: absolute;
+      top: 15vmin;
+      left: 8vmax;
+      background-color: white;
+       width: 70vw;
+       height: 70vh;
+       opacity: 1;
+  }
+.modal-content {
+    font-family: "starwars", sans-serif;
+    font-size: 5vmax;
+    background-color: white;
+    text-align: center;
+    margin: 5% auto;
+    padding: 20px;
+    border: 2px solid gray;
+    width: 80%;
+    height: 70%;
+}
+  .close {
+      color:gray;
+      font-size: 8vmax;
+      font-weight: 700;
+      float: right;
+  }
+
+  .close:hover {
+      color: gray;
+      text-decoration: none;
+      cursor: pointer;
+  }
