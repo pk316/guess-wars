@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'starwars';
+    src: url('./assets/fonts/death.otf')
+}
+body {
+    background: url("./assets/images/space.jpg") no-repeat fixed;
+    background-size: cover;
+    background-color: black;
+    font-family: 'starwars'
+}
+
+.intro-text {
+    font-family: 'starwars';
+}
+
+input {
+    font-size: 22px;
+    font-family: 'starwars';
+    width: 50%;
+    border-radius: 4px;
+}
+
+
+
+.btn {
+    padding-top: 5%;
+    font-family: 'starwars';
+    cursor: pointer;
+}
+
+
+.main-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+form{
+    text-align: center;
+    position: relative;
+    top: 30vmin;
+}
+.intro {
+    position: absolute;
+    width: 18em;
+    height: 50em;
+    bottom: -15vh;
+    left: 60%;
+    margin-left: -10em;
+    font-size: 5vmin;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(600px) rotateX(40deg);
+}
+.intro-content {
+    position: absolute;
+    /* top: 100%; */
+    /* animation: scroll 100s linear 4s infinite; */
+    animation: scroll 100s linear 0s;
+}
+@keyframes scroll {
+    0% {
+        top: 120%;
+    }
+    20% {
+        visibility: hidden;
+    }
+    100% {
+        top: -170%;
+        visibility: hidden;
+    }
+}
+.game-title {
+    color: black;
+    font-size: 15vmin;
+    font-family: 'starwars';
+    font-weight: '900';
+    line-height: 13vh;
+    text-shadow: -3px 0 yellow, 0 3px yellow, 3px 0 yellow, 0 -3px yellow;
+    text-align: center;
+    padding: 3%;
+    border: 2px solid black;
+    animation: slam 5s ease-in-out;
+}
+@keyframes slam {
+    0% {
+        transform: scale(13, 13);
+        opacity: 0;
+        overflow: hidden;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+.guess {
+    position: absolute;
+    width: 80%;
+    height: 20em;
+    bottom: 0;
+    left: 70%;
+    margin-left: -10em;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(0deg);
+}
+
+.guess-content {
+    position: absolute;
+    top: 100%;
+    float: right;
+    animation: scroll 60s linear 2s infinite;
+}

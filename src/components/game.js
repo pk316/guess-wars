@@ -1,6 +1,7 @@
+
+
 import React, { Component } from 'react' ;
 import PreviousGuesses from './previousGuess';
-import './game.css';
 
 class Game extends Component {
     constructor(props) {
@@ -67,22 +68,35 @@ class Game extends Component {
         const {num, guess, response, previousGuesses } = this.state;
         return (
             <div className="container">
-                <h1 className="text-center my-3">Guessing Game</h1>
+                <h1 className="game-title text-center my-3">Guess Wars</h1>
                 <form className="form-group">
                     <div className="row justify-content-center">
-                        <div className="col-4">
-                            <input value={guess} onChange={this.inputChange} className="numInput form-control" type="number" />
-                        </div>
-                        <div className="row justify-content-center ">
-                            <button onClick={this.checkGuess} className="btn btn-lg btn-outline-success col-9">GUESS</button>
-                            <button onClick={this.reset} className="btn btn-lg btn-outline-danger col-9">RESET</button>
+                        <input value={guess} onChange={this.inputChange} className="input-lg text-center" type="number" placeholder="1-10" min="0" max="10" autoFocus="autofocus" />
+                        <button onClick={this.checkGuess} className="btn btn-lg btn-outline-success m-2 text-center">GUESS</button>
+                        <button onClick={this.reset} className="btn btn-lg btn-outline-danger m-2 text-center">RESET</button>
+                    </div>
+                </form>  
+                <div className="intro">
+                    <div className="intro-content">
+                        <p className="intro-text">Can you guess correct number ??</p>
+
+                            {/* <PreviousGuesses previousGuesses={previousGuesses}/> */}
+                    </div>
+                    <div className="guess">
+                        <div className="guess-content">
+                            <PreviousGuesses previousGuesses={previousGuesses} />
                         </div>
                     </div>
-                </form>
-                <PreviousGuesses previousGuesses={previousGuesses}/>
+                </div>
             </div>
         )
     }
 }
 
 export default Game;
+
+
+
+
+
+

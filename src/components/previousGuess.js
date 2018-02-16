@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export default (props) => {
@@ -6,9 +5,11 @@ export default (props) => {
     const previousGuesses = props.previousGuesses
 
     return (
-        <div>
-            {previousGuesses}
-        </div>
+
+            <div className="prev-guess">
+                {previousGuesses}
+            </div>
+
     )
 
 }
