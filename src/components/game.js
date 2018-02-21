@@ -4,7 +4,7 @@ import PreviousGuesses from './previousGuess';
 // import './game.css';
 
 const display = {
-    display: 'flex'
+    display: 'block'
 };
 const hide = {
     display: 'none'

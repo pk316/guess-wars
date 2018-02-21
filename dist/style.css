@@ -13,71 +13,28 @@ body {
     background-color: black;
     font-family: 'starwars'
 }
+
 .container {
     width: 100vw;
     height: 100vh;
-    /* display: flex;
-    flex-direction: column; */
+    text-align: center;
 }
 
-/* .intro-text {
-    font-family: 'starwars';
-} */
-
 input {
-    /* font-size: 22px; */
     font-size: 3vh;
-    /* font-family: 'starwars'; */
     width: 30vmax;
     border-radius: 10px;
 }
 
 .btn {
-    /* padding-top: 5%; */
     font-family: 'starwars';
     cursor: pointer;
 }
 
 form{
     text-align: center;
-    /* position: relative;
-    top: 50vmin; */
-}
-.intro {
-
-    width: 80vw;
-    height: 50vh;
-
-    font-size: 7vmin;
-    font-weight: bold;
-    text-align: center;
-    /* overflow: hidden; */
-    transform-origin: 30% 30%;
-    transform: perspective(900px) rotateX(40deg);
-}
-.intro-content {
-    position: absolute;
-    visibility: hidden;
-    /* top: 100%;*/ 
-    /* animation: scroll 100s linear 4s infinite; */
-    animation: scroll 5s linear 0s;
 }
 
-@keyframes scroll {
-    0% {
-        /* top: 100%; */
-        transform: translateY(200%);
-        visibility: visible;
-    }
-    /* 50% {
-        visibility: hidden;
-    } */
-    100% {
-        /* top: -150%; */
-        transform: translateY(-100%);
-        visibility: hidden;
-    }
-}
 .game-title {
     color: black;
     font-size: 15vmin;
@@ -90,13 +47,13 @@ form{
     border: 2px solid black;
     animation: slam 5s ease-in-out;
 }
+
 @keyframes slam {
     0% {
         transform: scale(13, 13);
-        opacity: 0;
         overflow: hidden;
     }
-    40% {
+    60%{
         opacity: 1;
     }
     100% {
@@ -104,22 +61,46 @@ form{
         opacity: 0;
     }
 }
+.intro {
+    /* width: 80vw; */
+    height: 50vh;
+    font-size: 7vmin;
+    position: absolute;
+    /* bottom: 10%; */
+    font-weight: bold;
+    text-align: center;
+    /* transform-origin: 60% 100%; */
+    transform-origin: center;
+    transform: perspective(500px) rotateX(40deg);
+}
+.intro-content {
+    visibility: hidden;
+    animation: scroll 5s linear 4s;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(200%);
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(-100%);
+        visibility: hidden;
+    }
+}
+
 .prev-guess {
     list-style-type: none;
 }
 
 .guess{ 
-     /* position: absolute; */
-      /* width: 80vw; */
-      height: 60vh;
-
-     overflow: hidden;
-     transform-origin: 60% 100%;
-     transform: perspective(500px) rotateX(30deg);
+    height: 45vh;
+    overflow: hidden;
+    /* transform-origin: 60% 100%;
+    transform: perspective(500px) rotateX(40deg); */
      
 }
 .guess-content {
-
      animation: scroll-guess 10s linear infinite;
 }
   @keyframes scroll-guess {
@@ -128,18 +109,20 @@ form{
       }
       100% {
            transform: translateY(-100%);
-
       }
   }
 
 
   .win-modal{
     position: absolute;
-    top: 15vmin;
-    left: 0vmax;
     background-color: white;
-    width: 50vw;
-    height: 60vh;
+    width: 80vw;
+    height: 80vh;
+    left: 35vw;
+    top: 40vh;
+    margin-left: -35vw;
+    margin-top: -30vh;
+    opacity: 1;
   }
 .modal-content {
     font-family: "starwars", sans-serif;
@@ -152,95 +135,112 @@ form{
     width: 80%;
     height: 80%;
 }
-/* .close-btn {
+.close-btn {
     color:gray;
-    font-size: 6vmax;
-    font-weight: 700;
-    padding: 5%;
-} */
+    font-size: 7vmin;
+    float: right;
+    padding-top: 0;
+    vertical-align: top;
+}
 
 .close-btn:hover {
     color: gray;
     text-decoration: none;
     cursor: pointer;
 }
-/* @media screen and (min-width:320px) {
+
+@media screen and (min-width: 310px) and (min-height: 470px){
     .game-title {
-        color: black;
-        font-size: 15vmin;
-        line-height: 12vmin;
+        line-height: 9vh;
     }
-    form {
-        top: 70vmin;
-    }
-    .win-modal {
-        top: 40vmin;
-        left: 13vmax;
-        width: 50vw;
-        height: 40vh;
-    }
-} */
-/* @media screen and (min-width:320px) and (orientation: landscape) {
-    .guess{
-        margin-left: 10vw;
-    }
-}
-@media screen and (min-width:320px) and (min-height: 560px) {
-    form {
-        top: 80vmin;
-    }
-    .win-modal {
-        top: 40vmin;
-        left: 11vmax;
-        width: 50vw;
-        height: 40vh;
+    .intro{
+        height: 45vh;
     }
     .guess {
-        left: 5vmin;
+        position: absolute;
+        height: 45vh;
+        width: 80vw;
+        bottom: 10vh;
     }
 }
-@media screen and (min-width:560px) and (orientation: landscape) {
+@media screen and (min-width: 480px) and (min-height: 320px) {
+    .game-title {
+        line-height: 9vh;
+    }
     .intro {
-        left: 5vw;
+        height: 45vh;
+        left: 15vw;
+    }
+    .guess {
+        position: absolute;
+        height: 45vh;
+        width: 80vw;
+        left: -10vw;
+        bottom: 10vh;
     }
 }
-@media screen and (min-width:640px) and (orientation: landscape) {
-    .intro {
-        left: -5vw;
+@media screen and (min-width: 640px) and (min-height: 360px) and (orientation:landscape) {
+    .game-title {
+        line-height: 9vh;
     }
-}
-@media screen and (min-width:730px) and (orientation: landscape) {
     .intro {
+        height: 40vh;
+        left: 8vw;
+
+    }
+    .guess {
+        position: absolute;
+        height: 45vh;
+        width: 80vw;
+        bottom: 5vh;
         left: -10vw;
     }
 }
-@media screen and (min-width:1024px) and (orientation: landscape) {
-    .intro {
-        left: 0vw;
-    }
-    .intro-content{
-        font-size: 5vmin;
-    }
-}
-@media screen and (min-width:1330px) and (orientation: landscape) {
-    .intro {
-        left: -5vw;
-    }
-}
-
-@media screen and (min-width:1560px) and (orientation: landscape) {
-    .intro-content{
-        font-size: 4vmin;
-    }
-    .intro {
+@media screen and (min-width: 568px) and (min-height: 320px) and (orientation:landscape) {
+   .intro {
+       left: 20vw;
+       height: 30vh;
+   }
+    .guess {
         left: -15vw;
     }
 }
-@media screen and (min-width:1800px) and (orientation: landscape) {
-    .intro-content {
-        font-size: 4vmin;
-    }
+@media screen and (min-width: 667px) and (min-height: 375px) and (orientation:landscape) {
     .intro {
+        left: 5vw;
+    }
+    .guess {
+        left: -10vw;
+    }
+}
+@media screen and (min-width: 736px) and (min-height: 414px) and (orientation:landscape) {
+    .intro {
+        left: 5vw;
+    }
+    .guess {
+        left: -15vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .guess {
+        left: -2vw;
+    }
+}
+@media screen and (min-width: 1100px) {
+    .guess {
+        bottom: 1vh;
+        left: -5vw;
+    }
+}
+@media screen and (min-width: 1700px){
+    .guess {
+        left: -15vw;
+    }
+}
+@media screen and (min-width: 2500px) {
+    .guess {
         left: -25vw;
     }
-} */
+}
+
