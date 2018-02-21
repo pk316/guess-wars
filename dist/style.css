@@ -13,32 +13,24 @@ body {
     background-color: black;
     font-family: 'starwars'
 }
- /* body h4 {
-    margin: 20px;
-    font-family: 'starwars';
-}  */
-.intro-text {
-    font-family: 'starwars';
+.container {
+    width: 100vw;
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column; */
 }
+
+/* .intro-text {
+    font-family: 'starwars';
+} */
 
 input {
     /* font-size: 22px; */
     font-size: 3vh;
-    font-family: 'starwars';
+    /* font-family: 'starwars'; */
     width: 30vmax;
     border-radius: 10px;
 }
-
-/* li {
-    border-radius: 4px;
-} */
-
-/* .main-area {
-    background-color: rgba(0, 0, 0, .7);
-    border-radius: 10px;
-    padding: 20px;
-    margin-top: 30px;
-} */
 
 .btn {
     /* padding-top: 5%; */
@@ -46,63 +38,43 @@ input {
     cursor: pointer;
 }
 
-/* .success {
-    color: #72b566;
-}
-
-.response {
-    margin: 20px 0;
-    color: red;
-}
-
-.history {
-    list-style-type: none;
-    background-color: rgba(118, 115, 115, 0.5);
-    width: 50%;
-    margin: 0 auto;
-    border-radius: 4px;
-} */
-
-
-/* .main-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-} */
 form{
     text-align: center;
-    position: relative;
-    top: 50vmin;
+    /* position: relative;
+    top: 50vmin; */
 }
 .intro {
-    position: absolute;
-    width: 18em;
-    height: 50em;
-    bottom: -15vh;
-    left: 60%;
-    margin-left: -10em;
-    font-size: 5vmin;
+
+    width: 80vw;
+    height: 50vh;
+
+    font-size: 7vmin;
     font-weight: bold;
     text-align: center;
-    overflow: hidden;
-    transform-origin: 50% 100%;
-    transform: perspective(600px) rotateX(40deg);
+    /* overflow: hidden; */
+    transform-origin: 30% 30%;
+    transform: perspective(900px) rotateX(40deg);
 }
 .intro-content {
     position: absolute;
+    visibility: hidden;
     /* top: 100%;*/ 
     /* animation: scroll 100s linear 4s infinite; */
-    /* animation: scroll 60s linear 0s; */
+    animation: scroll 5s linear 0s;
 }
+
 @keyframes scroll {
     0% {
-        top: 100%;
+        /* top: 100%; */
+        transform: translateY(200%);
+        visibility: visible;
     }
-    13% {
+    /* 50% {
         visibility: hidden;
-    }
+    } */
     100% {
-        top: -150%;
+        /* top: -150%; */
+        transform: translateY(-100%);
         visibility: hidden;
     }
 }
@@ -116,7 +88,7 @@ form{
     text-align: center;
     padding: 3%;
     border: 2px solid black;
-    /* animation: slam 5s ease-in-out; */
+    animation: slam 5s ease-in-out;
 }
 @keyframes slam {
     0% {
@@ -136,70 +108,139 @@ form{
     list-style-type: none;
 }
 
-.guess{
-     position: absolute;
-     width: 60vmax;
-     height: 60vmax;
-     bottom: -10%;
-     text-align: center;
-     left: 15vmax;
-     /* margin-left: -10em; */
-     font-size: 100%;
-     font-weight: bold;
-     /* text-align: justify; */
+.guess{ 
+     /* position: absolute; */
+      /* width: 80vw; */
+      height: 60vh;
+
      overflow: hidden;
-     /* transform-origin: center; */
-     transform: perspective(300px) rotateX(0deg);
+     transform-origin: 60% 100%;
+     transform: perspective(500px) rotateX(30deg);
+     
 }
 .guess-content {
-     position: absolute;
-     /* top: 100%; */
-     /* float: right; */
-     animation: scroll-guess 8s ease-in infinite;
+
+     animation: scroll-guess 10s linear infinite;
 }
   @keyframes scroll-guess {
       0% {
-          top: 60vh
+          transform: translateY(100%);
       }
-      /* 50% {
-          visibility: hidden;
-      } */
       100% {
-          top: 0vh;
-          /* visibility: hidden; */
+           transform: translateY(-100%);
+
       }
   }
 
 
   .win-modal{
-      position: absolute;
-      top: 15vmin;
-      left: 8vmax;
-      background-color: white;
-       width: 70vw;
-       height: 70vh;
-       opacity: 1;
+    position: absolute;
+    top: 15vmin;
+    left: 0vmax;
+    background-color: white;
+    width: 50vw;
+    height: 60vh;
   }
 .modal-content {
     font-family: "starwars", sans-serif;
-    font-size: 5vmax;
+    font-size: 5vmin;
     background-color: white;
     text-align: center;
     margin: 5% auto;
     padding: 20px;
     border: 2px solid gray;
     width: 80%;
-    height: 70%;
+    height: 80%;
 }
-  .close {
-      color:gray;
-      font-size: 8vmax;
-      font-weight: 700;
-      float: right;
-  }
+/* .close-btn {
+    color:gray;
+    font-size: 6vmax;
+    font-weight: 700;
+    padding: 5%;
+} */
 
-  .close:hover {
-      color: gray;
-      text-decoration: none;
-      cursor: pointer;
-  }
+.close-btn:hover {
+    color: gray;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* @media screen and (min-width:320px) {
+    .game-title {
+        color: black;
+        font-size: 15vmin;
+        line-height: 12vmin;
+    }
+    form {
+        top: 70vmin;
+    }
+    .win-modal {
+        top: 40vmin;
+        left: 13vmax;
+        width: 50vw;
+        height: 40vh;
+    }
+} */
+/* @media screen and (min-width:320px) and (orientation: landscape) {
+    .guess{
+        margin-left: 10vw;
+    }
+}
+@media screen and (min-width:320px) and (min-height: 560px) {
+    form {
+        top: 80vmin;
+    }
+    .win-modal {
+        top: 40vmin;
+        left: 11vmax;
+        width: 50vw;
+        height: 40vh;
+    }
+    .guess {
+        left: 5vmin;
+    }
+}
+@media screen and (min-width:560px) and (orientation: landscape) {
+    .intro {
+        left: 5vw;
+    }
+}
+@media screen and (min-width:640px) and (orientation: landscape) {
+    .intro {
+        left: -5vw;
+    }
+}
+@media screen and (min-width:730px) and (orientation: landscape) {
+    .intro {
+        left: -10vw;
+    }
+}
+@media screen and (min-width:1024px) and (orientation: landscape) {
+    .intro {
+        left: 0vw;
+    }
+    .intro-content{
+        font-size: 5vmin;
+    }
+}
+@media screen and (min-width:1330px) and (orientation: landscape) {
+    .intro {
+        left: -5vw;
+    }
+}
+
+@media screen and (min-width:1560px) and (orientation: landscape) {
+    .intro-content{
+        font-size: 4vmin;
+    }
+    .intro {
+        left: -15vw;
+    }
+}
+@media screen and (min-width:1800px) and (orientation: landscape) {
+    .intro-content {
+        font-size: 4vmin;
+    }
+    .intro {
+        left: -25vw;
+    }
+} */

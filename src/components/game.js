@@ -107,8 +107,8 @@ class Game extends Component {
                     </div>
                 </div>
                 <div className="win-modal" style={this.state.toggle ? display : hide}>
+                    <span onClick={this.reset} className="close-btn">&times;</span>
                     <div className="modal-content">
-                        <span className="close">&times;</span>
                         <div>
                             <p>You Guessed it!!</p>
                         </div>
