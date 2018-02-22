@@ -6,15 +6,9 @@ export default (props) => {
 
     return (
         <ul>
-            {props.previousGuesses.map(function (value) {
-                return <li className="prev-guess">{value}</li>;
-            })}
+            {props.previousGuesses.map((value, index) =>
+                <li className="prev-guess" key={index}>{value}</li>
+            )}
         </ul>
-
-            // <div className="prev-guess">
-            //     {previousGuesses}
-            // </div>
-
     )
-
 }
