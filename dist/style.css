@@ -26,12 +26,14 @@ input {
     font-family: 'starwars';
     cursor: pointer;
 }
+
 .win-response{
     font-family: 'starwars';
     color: green;
     font-size: 3em;
     animation: blink 2s step-end infinite;
 }
+
 @keyframes blink {
     50% {
         color: transparent
@@ -51,7 +53,6 @@ form{
     text-shadow: -3px 0 yellow, 0 3px yellow, 3px 0 yellow, 0 -3px yellow;
     text-align: center;
     padding: 3%;
-    /* border: 2px solid black; */
     animation: slam 2s ease-in-out;
 }
 
@@ -68,19 +69,18 @@ form{
         opacity: 0;
     }
 }
+
 .intro {
     color: yellow;
-    /* width: 80vw; */
     height: 50vh;
     font-size: 7vmin;
     position: absolute;
-    /* bottom: 10%; */
     font-weight: bold;
     text-align: center;
-    /* transform-origin: 60% 100%; */
     transform-origin: center;
     transform: perspective(500px) rotateX(40deg);
 }
+
 .intro-content {
     font-family: 'starwars';
     font-weight: 300;
@@ -104,19 +104,17 @@ form{
 }
 
 .guess{ 
-    /* color: yellow; */
     height: 45vh;
     overflow: hidden;
-    /* transform-origin: 60% 100%;
-    transform: perspective(500px) rotateX(40deg); */
-     
 }
+
 .guess-content {   
     visibility: hidden;
     font-family: 'starwars';
     font-weight: 300;
     animation: scroll-guess 10s linear 4s infinite;
 }
+
 @keyframes scroll-guess {
     0% {
         transform: translateY(100%);
@@ -126,7 +124,7 @@ form{
         transform: translateY(-100%);
     }
 }
-
+/* 
 .win-modal{
     position: absolute;
     background-color: white;
@@ -138,6 +136,7 @@ form{
     margin-top: -30vh;
     opacity: 1;
 }
+
 .modal-content {
     font-family: "starwars", sans-serif;
     font-size: 5vmin;
@@ -149,6 +148,7 @@ form{
     width: 80%;
     height: 80%;
 }
+
 .close-btn {
     color:gray;
     font-size: 7vmin;
@@ -161,7 +161,7 @@ form{
     color: gray;
     text-decoration: none;
     cursor: pointer;
-}
+} */
 
 @media screen and (min-width: 310px) and (min-height: 470px){
     .game-title {
@@ -177,6 +177,7 @@ form{
         bottom: 10vh;
     }
 }
+
 @media screen and (min-width: 480px) and (min-height: 320px) {
     .game-title {
         line-height: 9vh;
@@ -193,6 +194,7 @@ form{
         bottom: 10vh;
     }
 }
+
 @media screen and (min-width: 640px) and (min-height: 360px) and (orientation:landscape) {
     .game-title {
         line-height: 9vh;
@@ -210,6 +212,7 @@ form{
         left: -10vw;
     }
 }
+
 @media screen and (min-width: 568px) and (min-height: 320px) and (orientation:landscape) {
    .intro {
        left: 20vw;
@@ -241,30 +244,34 @@ form{
         left: -2vw;
     }
 }
+
 @media screen and (min-width: 1100px) {
     .guess {
         bottom: 1vh;
         left: -5vw;
     }
 }
+
 @media screen and (min-width: 1500px) {
     .guess {
         left: -11vw;
     }
 }
+
 @media screen and (min-width: 1700px){
     .guess {
         left: -15vw;
     }
 }
+
 @media screen and (min-width: 2200px) {
     .guess {
         left: -20vw;
     }
 }
+
 @media screen and (min-width: 2500px) {
     .guess {
         left: -25vw;
     }
 }
-
