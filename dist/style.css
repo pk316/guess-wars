@@ -44,8 +44,8 @@ form{
     text-shadow: -3px 0 yellow, 0 3px yellow, 3px 0 yellow, 0 -3px yellow;
     text-align: center;
     padding: 3%;
-    border: 2px solid black;
-    animation: slam 5s ease-in-out;
+    /* border: 2px solid black; */
+    animation: slam 3.5s ease-in-out;
 }
 
 @keyframes slam {
@@ -76,7 +76,7 @@ form{
 }
 .intro-content {
     visibility: hidden;
-    animation: scroll 5s linear 4s;
+    animation: scroll 3s linear 3.5s;
 }
 
 @keyframes scroll {
@@ -103,11 +103,13 @@ form{
      
 }
 .guess-content {
-     animation: scroll-guess 10s linear infinite;
+     animation: scroll-guess 10s linear 6.5s infinite;
+     visibility: hidden;
 }
   @keyframes scroll-guess {
       0% {
           transform: translateY(100%);
+          visibility: visible;
       }
       100% {
            transform: translateY(-100%);
