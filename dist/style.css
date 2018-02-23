@@ -2,10 +2,6 @@
     font-family: 'starwars';
     src: url('./assets/fonts/death.otf')
 }
-/* 
-div {
-    color: #BB9867;
-} */
 
 body {
     background: url("./assets/images/space.jpg") no-repeat fixed;
@@ -30,6 +26,17 @@ input {
     font-family: 'starwars';
     cursor: pointer;
 }
+.win-response{
+    font-family: 'starwars';
+    color: green;
+    font-size: 3em;
+    animation: blink 2s step-end infinite;
+}
+@keyframes blink {
+    50% {
+        color: transparent
+    }
+}
 
 form{
     text-align: center;
@@ -45,7 +52,7 @@ form{
     text-align: center;
     padding: 3%;
     /* border: 2px solid black; */
-    animation: slam 3.5s ease-in-out;
+    animation: slam 2s ease-in-out;
 }
 
 @keyframes slam {
@@ -75,8 +82,10 @@ form{
     transform: perspective(500px) rotateX(40deg);
 }
 .intro-content {
+    font-family: 'starwars';
+    font-weight: 300;
     visibility: hidden;
-    animation: scroll 3s linear 3.5s;
+    animation: scroll 3s linear 2s;
 }
 
 @keyframes scroll {
@@ -95,29 +104,30 @@ form{
 }
 
 .guess{ 
-    color: yellow;
+    /* color: yellow; */
     height: 45vh;
     overflow: hidden;
     /* transform-origin: 60% 100%;
     transform: perspective(500px) rotateX(40deg); */
      
 }
-.guess-content {
-     animation: scroll-guess 10s linear 6.5s infinite;
-     visibility: hidden;
+.guess-content {   
+    visibility: hidden;
+    font-family: 'starwars';
+    font-weight: 300;
+    animation: scroll-guess 10s linear 4s infinite;
 }
-  @keyframes scroll-guess {
-      0% {
-          transform: translateY(100%);
-          visibility: visible;
-      }
-      100% {
-           transform: translateY(-100%);
-      }
-  }
+@keyframes scroll-guess {
+    0% {
+        transform: translateY(100%);
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
 
-
-  .win-modal{
+.win-modal{
     position: absolute;
     background-color: white;
     width: 80vw;
@@ -127,7 +137,7 @@ form{
     margin-left: -35vw;
     margin-top: -30vh;
     opacity: 1;
-  }
+}
 .modal-content {
     font-family: "starwars", sans-serif;
     font-size: 5vmin;
