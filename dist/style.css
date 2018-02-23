@@ -11,7 +11,7 @@ body {
     background: url("./assets/images/space.jpg") no-repeat fixed;
     background-size: cover;
     background-color: black;
-    font-family: 'starwars'
+    font-family: 'starwars';
 }
 
 .container {
@@ -62,6 +62,7 @@ form{
     }
 }
 .intro {
+    color: yellow;
     /* width: 80vw; */
     height: 50vh;
     font-size: 7vmin;
@@ -94,6 +95,7 @@ form{
 }
 
 .guess{ 
+    color: yellow;
     height: 45vh;
     overflow: hidden;
     /* transform-origin: 60% 100%;
@@ -213,14 +215,14 @@ form{
         left: -10vw;
     }
 }
-@media screen and (min-width: 736px) and (min-height: 414px) and (orientation:landscape) {
+/* @media screen and (min-width: 736px) and (min-height: 414px) and (orientation:landscape) {
     .intro {
         left: 5vw;
     }
     .guess {
         left: -15vw;
     }
-}
+} */
 
 @media screen and (min-width: 1000px) {
     .guess {
@@ -233,9 +235,19 @@ form{
         left: -5vw;
     }
 }
+@media screen and (min-width: 1500px) {
+    .guess {
+        left: -11vw;
+    }
+}
 @media screen and (min-width: 1700px){
     .guess {
         left: -15vw;
+    }
+}
+@media screen and (min-width: 2200px) {
+    .guess {
+        left: -20vw;
     }
 }
 @media screen and (min-width: 2500px) {
