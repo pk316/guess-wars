@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react' ;
 import PreviousGuesses from './previousGuess';
-// import './game.css';
 
 const display = {
     display: 'block'
