@@ -197,7 +197,7 @@ form{
 
 @media screen and (min-width: 640px) and (min-height: 360px) and (orientation:landscape) {
     .game-title {
-        line-height: 9vh;
+        line-height: 11vh;
     }
     .intro {
         height: 40vh;
@@ -206,7 +206,7 @@ form{
     }
     .guess {
         position: absolute;
-        height: 45vh;
+        height: 42vh;
         width: 80vw;
         bottom: 5vh;
         left: -10vw;
@@ -238,7 +238,19 @@ form{
         left: -15vw;
     }
 } */
-
+@media screen and (min-width: 650px) {
+    .game-title {
+        line-height:11vh;
+    }
+    .guess {
+        left: -25vw;
+    }
+}
+@media screen and (min-width: 700px) {
+    .guess {
+        left: -4vw;
+    }
+}
 @media screen and (min-width: 1000px) {
     .guess {
         left: -2vw;
