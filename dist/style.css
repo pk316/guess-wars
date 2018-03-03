@@ -53,7 +53,7 @@ form{
     text-shadow: -3px 0 yellow, 0 3px yellow, 3px 0 yellow, 0 -3px yellow;
     text-align: center;
     padding: 3%;
-    animation: slam 2s ease-in-out;
+    animation: slam 3s ease-in-out;
 }
 
 @keyframes slam {
@@ -61,8 +61,11 @@ form{
         transform: scale(13, 13);
         overflow: hidden;
     }
-    60%{
+    80%{
         opacity: 1;
+    }
+    90% {
+        opacity: 0;
     }
     100% {
         transform: scale(1, 1);
@@ -85,7 +88,7 @@ form{
     font-family: 'starwars';
     font-weight: 300;
     visibility: hidden;
-    animation: scroll 3s linear 2s;
+    animation: scroll 3s linear 3s;
 }
 
 @keyframes scroll {
@@ -112,7 +115,7 @@ form{
     visibility: hidden;
     font-family: 'starwars';
     font-weight: 300;
-    animation: scroll-guess 10s linear 4s infinite;
+    animation: scroll-guess 10s linear 5s infinite;
 }
 
 @keyframes scroll-guess {
