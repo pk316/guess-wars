@@ -76,6 +76,7 @@ form{
 .intro {
     color: yellow;
     height: 50vh;
+    width: 100%;
     font-size: 7vmin;
     position: absolute;
     font-weight: bold;
@@ -107,8 +108,15 @@ form{
 }
 
 .guess{ 
-    height: 45vh;
+    /* height: 45vh;
+    overflow: hidden; */
+    height: 60vh;
     overflow: hidden;
+    position: relative;
+    top: -20vh;
+}
+.guess ul{
+    padding: 0;
 }
 
 .guess-content {   
@@ -166,7 +174,14 @@ form{
     cursor: pointer;
 } */
 
-@media screen and (min-width: 310px) and (min-height: 470px){
+
+@media screen and (width:768px) {
+    .guess-content {
+        width: 90vw;
+    }
+}
+
+/* @media screen and (min-width: 310px) and (min-height: 470px){
     .game-title {
         line-height: 9vh;
     }
@@ -232,7 +247,7 @@ form{
     .guess {
         left: -10vw;
     }
-}
+} */
 /* @media screen and (min-width: 736px) and (min-height: 414px) and (orientation:landscape) {
     .intro {
         left: 5vw;
@@ -241,7 +256,13 @@ form{
         left: -15vw;
     }
 } */
-@media screen and (min-width: 650px) {
+
+
+
+
+
+
+/* @media screen and (min-width: 650px) {
     .game-title {
         line-height:11vh;
     }
@@ -289,4 +310,4 @@ form{
     .guess {
         left: -25vw;
     }
-}
+} */
