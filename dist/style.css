@@ -82,7 +82,7 @@ form{
     font-weight: bold;
     text-align: center;
     transform-origin: center;
-    transform: perspective(500px) rotateX(40deg);
+    transform: perspective(500px) rotateX(55deg);
 }
 
 .intro-content {
@@ -174,7 +174,22 @@ form{
     cursor: pointer;
 } */
 
-
+@media screen and (width:320px) {
+    .game-title {
+        line-height: 8vh;
+    }
+    .intro {
+        width: 90vw;
+    }
+}
+@media screen and (width:360px) {
+    .game-title {
+        line-height: 8vh;
+    }
+    .intro {
+        width: 90vw;
+    }
+}
 @media screen and (width:768px) {
     .guess-content {
         width: 90vw;
