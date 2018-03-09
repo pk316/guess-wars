@@ -82,7 +82,7 @@ form{
     font-weight: bold;
     text-align: center;
     transform-origin: center;
-    transform: perspective(500px) rotateX(55deg);
+    transform: perspective(500px) rotateX(40deg);
 }
 
 .intro-content {
