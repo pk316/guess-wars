@@ -113,7 +113,7 @@ form{
     height: 60vh;
     overflow: hidden;
     position: relative;
-    top: -20vh;
+    bottom: 75%;
 }
 .guess ul{
     padding: 0;
