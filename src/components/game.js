@@ -19,8 +19,7 @@ class Game extends Component {
         this.previousGuesses = this.previousGuesses.bind(this);
     }
     generateRandomNum = () => {
-        return 50;
-        // return Math.floor(Math.random() * 100) + 1
+        return Math.floor(Math.random() * 100) + 1
     }
     reset = () => {
         this.setState(this.state);
