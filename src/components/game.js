@@ -21,6 +21,7 @@ class Game extends Component {
     generateRandomNum = () => {
         return Math.floor(Math.random() * 100) + 1
     }
+    
     reset = () => {
         this.setState(this.state);
     }
